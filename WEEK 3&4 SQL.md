@@ -1,4 +1,5 @@
-# SQL SELECT Statement Examples
+# READ OPERATION IN CRUD
+## SQL SELECT Statement Examples
 
 This repository contains practical examples of the SQL `SELECT` statement and its primary clauses. All queries are designed to run against the sample database available on the [Programiz Online SQL Compiler](https://www.programiz.com/sql/online-compiler).
 
