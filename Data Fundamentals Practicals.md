@@ -28,7 +28,9 @@ This repository contains a structured, hands-on curriculum featuring data roles 
   * **Tools Needed:** Posit Cloud workspace, R (`tidyverse`, `WDI` or `ggplot2`).
   * **Objective:** Programmatically ingest international development data to calculate historical GDP growth variations across regions.
   * **Deliverable:** An R script file hosted in Posit Cloud that generates an annotated multi-line trend chart and a localized clean summary table.
-### 3. Product Analyst - GA4* **Core Focus:** Tracking web traffic conversions, mapping user interactions, and identifying application friction points.* **Online Practical:** **User Acquisition & Checkout Funnel Analysis**
+### 3. Product Analyst - GA4* 
+**Core Focus:** Tracking web traffic conversions, mapping user interactions, and identifying application friction points.* **Online Practical:** 
+**User Acquisition & Checkout Funnel Analysis**
   * **Tools Needed:** Google Analytics 4 (GA4 Demo Account or Test Property).
   * **Objective:** Build a custom exploration funnel to audit where users drop off between viewing an item and finalizing a purchase.
   * **Deliverable:** A GA4 Exploration Funnel report detailing specific stage-to-stage drop-off rates and three data-backed UX recommendations.
