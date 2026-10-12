@@ -27,73 +27,70 @@ This repository contains a structured, hands-on curriculum featuring data roles 
   * **Deliverable:** An R script file hosted in Posit Cloud that generates an annotated multi-line trend chart and a localized clean summary table.
 
   ```
-// Install required libraries if they are missing
-// install.packages (c("tidyverse", "scales"))
+//# 1. Install required packages (run these if you haven't installed them yet)
+install.packages("WDI")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("scales")
 
-# Load libraries
-library(tidyverse)
+//# 2. Load the libraries
+library(WDI)
+library(ggplot2)
+library(dplyr)
 library(scales)
 
-# 1. Generate clean, reproducible Macroeconomic Dataset internally
-set.seed(42)
-years <- 2015:2025
-regions <- c("North America", "Europe & Central Asia", "East Asia & Pacific", "Sub-Saharan Africa")
+// # 3. Fetch Kenya's GDP data from the WDI API
+// # NY.GDP.MKTP.CD = GDP (Current USD)
+// # NY.GDP.MKTP.KD.ZG = GDP growth (annual %)
+kenya_gdp_data <- WDI(
+  country = "KE", 
+  indicator = c("gdp_usd" = "NY.GDP.MKTP.CD", "gdp_growth" = "NY.GDP.MKTP.KD.ZG"), 
+  start = 1990, 
+  end = 2025
+)
 
-gdp_data <- expand.grid(Year = years, Region = regions) %>%
-  mutate(
-    # Simulate a realistic baseline and positive growth trajectory per region
-    Base_GDP = case_when(
-      Region == "North America" ~ 20,
-      Region == "Europe & Central Asia" ~ 18,
-      Region == "East Asia & Pacific" ~ 15,
-      Region == "Sub-Saharan Africa" ~ 2.5
-    ),
-    Growth_Rate = case_when(
-      Region == "North America" ~ 0.022,
-      Region == "Europe & Central Asia" ~ 0.018,
-      Region == "East Asia & Pacific" ~ 0.045,
-      Region == "Sub-Saharan Africa" ~ 0.038
-    ),
-    # Add minor random economic fluctuations
-    Noise = rnorm(n(), mean = 0, sd = 0.2),
-    GDP_Trillions = Base_GDP * (1 + Growth_Rate)^(Year - 2015) + Noise
-  ) %>%
-  select(Year, Region, GDP_Trillions)
+// # 4. Preview the downloaded data structure
+head(kenya_gdp_data)
 
-# 2. Inspect data frame structures 
-print("First 6 rows of clean Macroeconomic Dataset:")
-print(head(gdp_data))
-
-# 3. Build an annotated, professional multi-line trend visualization
-gdp_plot <- ggplot(gdp_data, aes(x = Year, y = GDP_Trillions, color = Region, group = Region)) +
-  geom_line(linewidth = 1.2) +
-  geom_point(size = 2.5) +
-  theme_minimal(base_size = 14) +
+# ==========================================
+# VISUALIZATION 1: Kenya's GDP (Current USD)
+# ==========================================
+ggplot(kenya_gdp_data, aes(x = year, y = gdp_usd)) +
+  geom_line(color = "#006633", size = 1.2) + # Distinct green line
+  geom_point(color = "#990000", size = 2) +   # Dark red point indicators
+  scale_y_continuous(labels = label_dollar(scale = 1e-9, suffix = "B")) + # Formats to Billions ($B)
   labs(
-    title = "Macroeconomic GDP Trend Analysis (2015 - 2025)",
-    subtitle = "Comparative analysis of regional economic output over a decade",
-    x = "Calendar Year",
-    y = "Gross Domestic Product (USD, In Trillions)",
-    caption = "Source: Simulated Global Development Database"
+    title = "Kenya's Gross Domestic Product (GDP) Trend",
+    subtitle = "Data source: World Bank World Development Indicators (1990-2025)",
+    x = "Year",
+    y = "GDP (Current USD)"
   ) +
-  scale_y_continuous(labels = dollar_format(suffix = "T")) +
-  scale_x_continuous(breaks = seq(2015, 2025, by = 2)) +
-  scale_color_brewer(palette = "Set1") +
+  theme_minimal(base_size = 13) +
   theme(
-    legend.position = "bottom",
-    plot.title = element_text(face = "bold", size = 16),
-    plot.subtitle = element_text(color = "gray40"),
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, color = "gray40"),
     panel.grid.minor = element_blank()
   )
 
-# 4. Render the chart visualization to the plot viewer pane
-print(gdp_plot)
-
-# 5. Export clean data and final plot image directly to the cloud workspace
-write.csv(gdp_data, "clean_regional_gdp_trends.csv", row.names = FALSE)
-ggsave("gdp_trends_chart.png", plot = gdp_plot, width = 10, height = 6, dpi = 300)
-
-print("Process Complete. 'clean_regional_gdp_trends.csv' and 'gdp_trends_chart.png' successfully saved to Posit Cloud.")
+# ==========================================
+# VISUALIZATION 2: Annual GDP Growth Rate (%)
+# ==========================================
+ggplot(kenya_gdp_data, aes(x = year, y = gdp_growth)) +
+  geom_col(aes(fill = gdp_growth > 0), show.legend = FALSE) + # Color bars based on positive/negative growth
+  scale_fill_manual(values = c("TRUE" = "#006633", "FALSE" = "#990000")) +
+  geom_hline(yintercept = 0, color = "black", linetype = "dashed") +
+  scale_y_continuous(labels = label_percent(scale = 1/100)) +
+  labs(
+    title = "Kenya's Annual GDP Growth Rate",
+    subtitle = "Data source: World Bank World Development Indicators (1990-2025)",
+    x = "Year",
+    y = "Annual Growth Rate (%)"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, color = "gray40")
+  )
 
   ```
 ### 2. Data Analyst - Excel
