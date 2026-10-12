@@ -5,8 +5,8 @@ This repository contains a structured, hands-on curriculum featuring data roles 
 ---## 📋 Curriculum Overview
 | # | Career Path | Project Focus | Core Tools |
 |---|:---|:---|:---|
-| 1 | [Data Analyst](#1-data-analyst---excel) | E-Commerce Sales Performance | Excel / Sheets |
-| 2 | [Data Analyst](#2-data-analyst---posit-cloud--r) | Macroeconomic GDP Visualization | Posit Cloud, R, ggplot2 |
+| 1 | [Data Analyst](#2-data-analyst---posit-cloud--r) | Macroeconomic GDP Visualization | Posit Cloud, R, ggplot2 |
+| 2 | [Data Analyst](#1-data-analyst---excel) | E-Commerce Sales Performance | Excel / Sheets |
 | 3 | [Product Analyst](#3-product-analyst---ga4) | User Acquisition & Checkout Funnel | Google Analytics 4 (GA4) |
 | 4 | [Product Analyst](#4-product-analyst---posit-cloud--shiny) | Multi-Step Dynamic Registration App | Posit Cloud, RShiny |
 | 5 | [Marketing Data Analyst](#5-marketing-data-analyst---metricool) | Cross-Channel Social ROI Performance | Metricool |
@@ -18,32 +18,8 @@ This repository contains a structured, hands-on curriculum featuring data roles 
 ---
 
 ## 🛠️ Career Modules & Practicals
-### 1. Data Analyst - Excel
-**Core Focus:** Cleaning transaction records, calculating baseline metrics, and summarizing operational trends.
-  * **Online Practical:** **E-Commerce Sales Performance Analysis**
-  * **Tools Needed:** Microsoft Excel or Google Sheets.
-  * **Objective:** Clean a raw `.csv` transaction export using nested formulas (VLOOKUP/XLOOKUP, IFS) and isolate seasonal sales variations.
-  * **Deliverable:** A functional workbook containing automated summary sheets, dynamic Pivot Tables, and a list of underperforming product categories.
-```
-Transaction_ID,Date,Product_Category,Product_Name,Quantity,Unit_Price,Customer_Region,Payment_Method
-TXN_1001,2026-01-15,Electronics,Wireless Headphones,2,89.99,North,Credit Card
-TXN_1002,2026-01-16,ELECTRONICS, USB-C Cable ,5,15.50,South,PayPal
-TXN_1003,2026-01-16,Clothing,Winter Jacket,1,120.00,East,Credit Card
-TXN_1004,2026-01-17,Home & Kitchen, Blender ,1,,West,Debit Card
-TXN_1005,2026-01-18,Clothing, Running Shoes ,2,75.00,North,PayPal
-TXN_1006,2026-02-01,Home & Kitchen,Coffee Maker,1,45.00,South,Credit Card
-TXN_1007,2026-02-02,electronics,Wireless Headphones,1,89.99,West,Crypto
-TXN_1008,2026-02-03,Clothing, Winter Jacket ,2,120.00,East,Credit Card
-TXN_1009,2026-02-14,Home & Kitchen, Air Fryer ,1,110.00,North,Debit Card
-TXN_1010,2026-02-15,Electronics,USB-C Cable,10,15.50,South,PayPal
-TXN_1011,2026-03-01,CLOTHING,Running Shoes,1,75.00,West,Credit Card
-TXN_1012,2026-03-02,Electronics,Smart Watch,1,,East,Credit Card
-TXN_1013,2026-03-12,Home & Kitchen,Blender,2,35.00,North,PayPal
-TXN_1014,2026-03-15,Electronics,Wireless Headphones,3,89.99,South,Debit Card
-TXN_1015,2026-03-22,Clothing,T-Shirt,5,19.99,West,PayPal
-```
- 
-### 2. Data Analyst - Posit Cloud & R* 
+
+### 1. Data Analyst - Posit Cloud & R* 
 **Core Focus:** Writing reproducible scripts to fetch, clean, and map global economic indicators.* 
 **Online Practical:** **Macroeconomic GDP Trend Visualization**
   * **Tools Needed:** Posit Cloud workspace, R (`tidyverse`, `WDI` or `ggplot2`).
@@ -120,6 +96,32 @@ ggsave("gdp_trends_chart.png", plot = gdp_plot, width = 10, height = 6, dpi = 30
 print("Process Complete. 'clean_regional_gdp_trends.csv' and 'gdp_trends_chart.png' successfully saved to Posit Cloud.")
 
   ```
+### 2. Data Analyst - Excel
+**Core Focus:** Cleaning transaction records, calculating baseline metrics, and summarizing operational trends.
+  * **Online Practical:** **E-Commerce Sales Performance Analysis**
+  * **Tools Needed:** Microsoft Excel or Google Sheets.
+  * **Objective:** Clean a raw `.csv` transaction export using nested formulas (VLOOKUP/XLOOKUP, IFS) and isolate seasonal sales variations.
+  * **Deliverable:** A functional workbook containing automated summary sheets, dynamic Pivot Tables, and a list of underperforming product categories.
+```
+Transaction_ID,Date,Product_Category,Product_Name,Quantity,Unit_Price,Customer_Region,Payment_Method
+TXN_1001,2026-01-15,Electronics,Wireless Headphones,2,89.99,North,Credit Card
+TXN_1002,2026-01-16,ELECTRONICS, USB-C Cable ,5,15.50,South,PayPal
+TXN_1003,2026-01-16,Clothing,Winter Jacket,1,120.00,East,Credit Card
+TXN_1004,2026-01-17,Home & Kitchen, Blender ,1,,West,Debit Card
+TXN_1005,2026-01-18,Clothing, Running Shoes ,2,75.00,North,PayPal
+TXN_1006,2026-02-01,Home & Kitchen,Coffee Maker,1,45.00,South,Credit Card
+TXN_1007,2026-02-02,electronics,Wireless Headphones,1,89.99,West,Crypto
+TXN_1008,2026-02-03,Clothing, Winter Jacket ,2,120.00,East,Credit Card
+TXN_1009,2026-02-14,Home & Kitchen, Air Fryer ,1,110.00,North,Debit Card
+TXN_1010,2026-02-15,Electronics,USB-C Cable,10,15.50,South,PayPal
+TXN_1011,2026-03-01,CLOTHING,Running Shoes,1,75.00,West,Credit Card
+TXN_1012,2026-03-02,Electronics,Smart Watch,1,,East,Credit Card
+TXN_1013,2026-03-12,Home & Kitchen,Blender,2,35.00,North,PayPal
+TXN_1014,2026-03-15,Electronics,Wireless Headphones,3,89.99,South,Debit Card
+TXN_1015,2026-03-22,Clothing,T-Shirt,5,19.99,West,PayPal
+```
+ 
+
 ### 3. Product Analyst - GA4* 
 **Core Focus:** Tracking web traffic conversions, mapping user interactions, and identifying application friction points.* **Online Practical:** 
 **User Acquisition & Checkout Funnel Analysis**
