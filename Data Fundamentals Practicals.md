@@ -126,7 +126,7 @@ print("Process Complete. 'clean_regional_gdp_trends.csv' and 'gdp_trends_chart.p
   * **Tools Needed:** Google Analytics 4 (GA4 Demo Account or Test Property).
   * **Objective:** Build a custom exploration funnel to audit where users drop off between viewing an item and finalizing a purchase.
   * **Deliverable:** A GA4 Exploration Funnel report detailing specific stage-to-stage drop-off rates and three data-backed UX recommendations.
-
+  <img width="500" height="375" alt="image" src="https://github.com/user-attachments/assets/e5f58c48-861b-44ce-ba65-0d15ad03e4bc" />
   ```
   ## 3. Implementation Steps for Practical 3 (Product Analyst - GA4)
 This practical utilizes the official Google Analytics 4 (GA4) Merchandise Store Demonstration Account. Students do not need to configure code snippets or manage a live website deployment to complete this analysis.
