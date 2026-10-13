@@ -27,7 +27,7 @@ formats.
 
 ### Dataset
 
-Enter the following into a worksheet named `P1_DataTypes`.
+Use a .csv file to **enter the following** into a worksheet named `P1_DataTypes`.
 
   -------------------------------------------------------------------------------------------------------------
   Student_ID   Student_Name   Course      Date_Registered        Marks    Fee_KES   Attendance_Rate Submitted
@@ -38,7 +38,8 @@ Enter the following into a worksheet named `P1_DataTypes`.
 
   ADM003       Wanjiku Njeri  Animation           10/09/2026    91      28000              0.97 TRUE
   
-  ADM004       Kevin Ouma     Graphic Design      12/09/2026    49      25000              0.72 FALSE                                                             
+  ADM004       Kevin Ouma     Graphic Design      12/09/2026    49      25000              0.72 FALSE
+
   -------------------------------------------------------------------------------------------------------------
 
   ## Your output should be a table that looks like this
