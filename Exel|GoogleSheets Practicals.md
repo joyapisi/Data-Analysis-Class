@@ -37,8 +37,8 @@ Enter the following into a worksheet named `P1_DataTypes`.
   ADM002       Brian Mwangi   Film                08/09/2026    64      30000              0.85 FALSE
 
   ADM003       Wanjiku Njeri  Animation           10/09/2026    91      28000              0.97 TRUE
-
-  ADM004       Kevin Ouma     Graphic Design      12/09/2026    49      25000              0.72 FALSE                                                                
+  
+  ADM004       Kevin Ouma     Graphic Design      12/09/2026    49      25000              0.72 FALSE                                                             
   -------------------------------------------------------------------------------------------------------------
 
   ## Your output should be a table that looks like this
@@ -53,9 +53,9 @@ Enter the following into a worksheet named `P1_DataTypes`.
 ### Tasks
 
 1.  Identify the likely data type for each column: text, number, date,
-    logical value or formula.
+    logical value, or formula.
 2.  Format `Date_Registered` as a date.
-3.  Format `Fee_KES` as currency in Kenyan shillings, where available.
+3.  Format `Fee_KES` as currency in Kenyan shillings, where available. `"KES" #,##0.00`
 4.  Format `Attendance_Rate` as a percentage.
 5.  Keep `Student_ID` as text so leading zeros or letters are preserved.
 6.  In a new column called `Result`, enter a formula that displays Pass
