@@ -32,16 +32,23 @@ Enter the following into a worksheet named `P1_DataTypes`.
   -------------------------------------------------------------------------------------------------------------
   Student_ID   Student_Name   Course      Date_Registered        Marks    Fee_KES   Attendance_Rate Submitted
   ------------ -------------- ----------- ----------------- ---------- ---------- ----------------- -----------
-  ADM001       Amina Otieno   Graphic     05/09/2026                78      25000              0.92 TRUE
-                              Design                                                                
+  ADM001       Amina Otieno   Graphic Design      05/09/2026    78      25000              0.92 TRUE                                                                
 
-  ADM002       Brian Mwangi   Film        08/09/2026                64      30000              0.85 FALSE
+  ADM002       Brian Mwangi   Film                08/09/2026    64      30000              0.85 FALSE
 
-  ADM003       Wanjiku Njeri  Animation   10/09/2026                91      28000              0.97 TRUE
+  ADM003       Wanjiku Njeri  Animation           10/09/2026    91      28000              0.97 TRUE
 
-  ADM004       Kevin Ouma     Graphic     12/09/2026                49      25000              0.72 FALSE
-                              Design                                                                
+  ADM004       Kevin Ouma     Graphic Design      12/09/2026    49      25000              0.72 FALSE                                                                
   -------------------------------------------------------------------------------------------------------------
+
+  ## Your output should be a table that looks like this
+
+| Student_ID | Student_Name | Course | Date_Registered | Marks | Fee_KES | Attendance_Rate | Submitted |
+|------------|--------------|--------|-----------------|------:|--------:|----------------:|-----------|
+| ADM001 | Amina Otieno | Graphic Design | 05/09/2026 | 78 | 25000 | 0.92 | TRUE |
+| ADM002 | Brian Mwangi | Film | 08/09/2026 | 64 | 30000 | 0.85 | FALSE |
+| ADM003 | Wanjiku Njeri | Animation | 10/09/2026 | 91 | 28000 | 0.97 | TRUE |
+| ADM004 | Kevin Ouma | Graphic Design | 12/09/2026 | 49 | 25000 | 0.72 | FALSE |
 
 ### Tasks
 
