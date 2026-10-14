@@ -33,6 +33,7 @@ INSERT INTO Payments (payment_id, order_id, payment_method, payment_status) VALU
 ```
 
 ### Inserting Large Amounts of Entities
+```sql
 CREATE TABLE Users (
     user_id INTEGER PRIMARY KEY,
     username TEXT
