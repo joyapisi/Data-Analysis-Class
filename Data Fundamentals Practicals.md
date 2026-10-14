@@ -117,17 +117,16 @@ TXN_1013,2026-03-12,Home & Kitchen,Blender,2,35.00,North,PayPal
 TXN_1014,2026-03-15,Electronics,Wireless Headphones,3,89.99,South,Debit Card
 TXN_1015,2026-03-22,Clothing,T-Shirt,5,19.99,West,PayPal
 ```
- 
-
 ### 3. Product Analyst - GA4* 
 **Core Focus:** Tracking web traffic conversions, mapping user interactions, and identifying application friction points.* **Online Practical:** 
 **User Acquisition & Checkout Funnel Analysis**
   * **Tools Needed:** Google Analytics 4 (GA4 Demo Account or Test Property).
   * **Objective:** Build a custom exploration funnel to audit where users drop off between viewing an item and finalizing a purchase.
   * **Deliverable:** A GA4 Exploration Funnel report detailing specific stage-to-stage drop-off rates and three data-backed UX recommendations.
+
   <img width="500" height="375" alt="image" src="https://github.com/user-attachments/assets/e5f58c48-861b-44ce-ba65-0d15ad03e4bc" />
-  ```
-  ## 3. Implementation Steps for Practical 3 (Product Analyst - GA4)
+ 
+## 3. Implementation Steps for Practical 3 (Product Analyst - GA4)
 This practical utilizes the official Google Analytics 4 (GA4) Merchandise Store Demonstration Account. Students do not need to configure code snippets or manage a live website deployment to complete this analysis.
 ## Step 1: Access the Environment
 
@@ -178,7 +177,6 @@ Click the blue Apply button in the top right corner of the step builder window.
    1. Click the Export Data icon located in the upper right quadrant of the main canvas pane.
    2. Select Google Sheets or CSV to save the tabular row outputs.
    3. Compile these calculations into a clean Markdown document or executive memo summarizing three UI optimization ideas aimed directly at the highest drop-off stage.
-```
 
 ### 4. Product Analyst - Posit Cloud & Shiny* 
 **Core Focus:** Building front-end web interfaces to capture user inputs and handle structured analytical workflows.* 
@@ -186,6 +184,7 @@ Click the blue Apply button in the top right corner of the step builder window.
   * **Tools Needed:** Posit Cloud, RShiny framework.
   * **Objective:** Develop a reactive 3-step sign-up interface that validates inputs (email, age, region) on the fly and simulates database submission status.
   * **Deliverable:** A live UI link and a source `app.R` script processing user form interactions reactively in the cloud.
+
 ### 5. Marketing Data Analyst - Metricool* 
 **Core Focus:** Managing organic engagement loops, evaluating community metrics, and benchmarking content efficacy.* 
 **Online Practical:** 
@@ -193,6 +192,7 @@ Click the blue Apply button in the top right corner of the step builder window.
   * **Tools Needed:** Metricool dashboard (Free or Sandbox tier).
   * **Objective:** Aggregate impressions, click-through rates (CTR), and follower growth patterns from unified social channels over 90 days.
   * **Deliverable:** A client-ready marketing performance PDF generated directly from Metricool metrics, accompanied by a content strategy review.
+
 ### 6. Marketing Data Analyst - SQL* 
 **Core Focus:** Joining distributed advertising metrics to calculate exact customer acquisition costs.* 
 **Online Practical:** 
@@ -200,6 +200,7 @@ Click the blue Apply button in the top right corner of the step builder window.
   * **Tools Needed:** PostgreSQL, pgAdmin.
   * **Objective:** Write advanced relational SQL queries (`JOIN`, `GROUP BY`, `CASE WHEN`) to reconcile ad platform costs against backend transactional conversions.
   * **Deliverable:** A raw SQL script that calculates Return on Ad Spend (ROAS) and Cost Per Acquisition (CPA) grouped by traffic source.
+
 ### 7. Data Engineer - SQL* 
 **Core Focus:** Defining relational architectures, enforcing data constraints, and ensuring database indexing sanity.* 
 **Online Practical:** 
@@ -207,18 +208,21 @@ Click the blue Apply button in the top right corner of the step builder window.
   * **Tools Needed:** PostgreSQL, pgAdmin.
   * **Objective:** Design and write DDL scripts to build tables for customers, accounts, and transactions with correct primary/foreign key relationships.
   * **Deliverable:** A validated `.sql` database creation script that includes indices for optimized transaction history retrieval.
+
 ### 8. Data Engineer - Posit Cloud* 
 **Core Focus:** Building automated data collection intervals and scheduling hands-off analytical documents.* 
 **Online Practical:** **Automated Scheduled Report Pipeline**
   * **Tools Needed:** Posit Cloud, RMarkdown or Quarto, Cron jobs/Posit Connect.
   * **Objective:** Write a script that checks a live web data source, structures new records, and updates a stylized analytical report document layout.
   * **Deliverable:** A reproducible Quarto template that executes on a schedule to render a refreshed, standalone summary report document.
+
 ### 9. Business Analytics Translator - Excel* 
 **Core Focus:** Bridging complex underlying data frameworks into clear operational forecasting models for business leads.* **Online Practical:** 
 **User Cohort Retention & Financial Run Rate Forecast**
   * **Tools Needed:** Microsoft Excel.
   * **Objective:** Translate raw cohort activity dates into a monthly subscription retention matrix and map future corporate cash flow projections.
   * **Deliverable:** A financial forecasting model complete with conditional formatting heatmaps and a 12-month forward-looking executive summary.
+
 ### 10. Business Analytics Translator - Shiny* 
 **Core Focus:** Democratizing statistical calculation engines by creating easy-to-use, interactive tools for non-technical stakeholders.* 
 **Online Practical:** 
