@@ -32,24 +32,4 @@ INSERT INTO Payments (payment_id, order_id, payment_method, payment_status) VALU
 -- Step 4: Insert the last transaction record for the Payments table
 ```
 
-### Inserting Large Amounts of Entities
-```sql
-CREATE TABLE Users (
-    user_id INTEGER PRIMARY KEY,
-    username TEXT
-);
-
-CREATE TABLE Posts (
-    post_id INTEGER PRIMARY KEY,
-    content TEXT
-);
-
-CREATE TABLE Likes (
-    user_id INTEGER,
-    post_id INTEGER,
-    PRIMARY KEY (user_id, post_id),
-    FOREIGN KEY (user_id)
-        REFERENCES Users(user_id),
-    FOREIGN KEY (post_id)
-        REFERENCES Posts(post_id)
-);
+### In week 6&7, we'll learn how to insert Large Amounts of Entities using what we call a SCHEMA FILE.
