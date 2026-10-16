@@ -1,20 +1,6 @@
 # SQL and PostgreSQL ASSIGNMENTS
 
-1\. Group Assignment
-
-Practical database development project
-
-# 15 pts
-
-2\. Individual Assignment
-
-Independent SQL practical exercises
-
-# 10 pts
-
-
-
-## 2. Individual assignment — 10 points
+## Individual assignment — 10 points
 
 Title: SQL CRUD Skills Challenge
 
