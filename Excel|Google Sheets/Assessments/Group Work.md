@@ -8,14 +8,11 @@ Scenario: A Kenyan retail business has collected sales records from several bran
 
 ### Student tasks
 
-1. Import the supplied CSV file into Excel or Google Sheets.
+1. Import an unclean dummy CSV file into Excel or Google Sheets.
 2. Identify and remove duplicate transactions.
 3. Identify missing values and document how they are handled.
 4. Correct inconsistent product names and text formatting.
 5. Correct data types, including dates, quantities, and prices.
-6. Apply data validation to restrict invalid entries.
-7. Sort and filter the cleaned records.
-8. Submit the original dataset, cleaned dataset, and a short cleaning report.
 
 ### Marking rubric
 
@@ -29,5 +26,5 @@ Scenario: A Kenyan retail business has collected sales records from several bran
 | Documentation and group presentation                | 2     |
 | Total                                               | 15    |
 
-Deliverables: Original CSV, cleaned spreadsheet, validation rules, and a brief report describing the problems found and corrected.
+Deliverables: Original CSV, dirty CSV, cleaned spreadsheet, validation rules, and a brief report describing the problems found and corrected.
 
