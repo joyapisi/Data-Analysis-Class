@@ -2,35 +2,7 @@
 
 Course focus: Careers in Data, data analysis workflows, data visualization, and the use of tools such as Excel, Google Sheets, Posit Cloud, R and ggplot2.
 
-Total assessment: 55 points
-
-Since students have explored two Data Analyst career pathways through practical projects, the assessments should test both their understanding of careers in data and their ability to apply the tools to real-world datasets.
-
-## 1. Assessment structure
-
-Group assignment
-
-Applied data analysis project
-
-# 15 points
-
-Individual assignment
-
-Independent career and data task
-
-# 10 points
-
-CAT I and CAT II
-
-Two tests, 15 points each
-
-# 30 points
-
-Total
-
-# 55 points
-
-## 2. Group assignment — 15 points
+## Group assignment — 15 points
 
 [World Development Report 2021 Maps and Figures](https://images.openai.com/static-rsc-4/rPHlcnYh-V1rN-NQ8GYrixCrF8wO6iVydsnVaKCEvqaVmp-AedAzkdwu7IIn_PLKiIOQm4m5qLc3TzlTWisqzc6oO-Zdii8Wfsx9p3oSkIg-v3fC_EUESzXck093I3tPt97YT62jnc_yGYL588s9KReOpuRvigMbpW5WZCYQhZ4?purpose=inline)
 
