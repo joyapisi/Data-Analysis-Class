@@ -40,8 +40,7 @@ Assessment rule: Each query must execute successfully and produce the intended r
 | Assessment            | Suggested timing                              | points |
 | --------------------- | --------------------------------------------- | ----- |
 | Individual assignment | After introductory CRUD practicals            | 10    |
-| Group assignment      | After students can perform CRUD independently | 15    |
-| Total                 |                                               | 25    |
+| Total                 |                                               | 10    |
 
 ## Submission
 A Word document that includes the INPUT codes and screenshots of your OUTPUT
