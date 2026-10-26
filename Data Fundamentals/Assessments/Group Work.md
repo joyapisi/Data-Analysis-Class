@@ -2,6 +2,8 @@
 
 Title: Data Analysts at Work — Visualising Data
 
+NOTE: BEFORE STARTING, PLEASE GO THROUGH THIS [SERIES OF QUESTIONS WITH YOUR GROUP MEMBERS](https://github.com/joyapisi/Data-Analysis-Class/blob/main/INTRODUCTION.md)
+
 Groups of 3–5 students · Practical project
 
 ### Student task
