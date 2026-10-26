@@ -1,5 +1,7 @@
 ## Group assignment — 15 points
 
+NOTE: BEFORE STARTING, PLEASE GO THROUGH THIS [SERIES OF QUESTIONS WITH YOUR GROUP MEMBERS](https://github.com/joyapisi/Data-Analysis-Class/blob/main/INTRODUCTION.md)
+
 Title: Design and Manage a Student Registration Database Using PostgreSQL
 
 Mode: Groups of 3–5 students · Practical project
