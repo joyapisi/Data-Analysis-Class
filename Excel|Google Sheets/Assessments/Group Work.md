@@ -1,5 +1,7 @@
 Group assignment — 15 marks
 
+NOTE: BEFORE STARTING, PLEASE GO THROUGH THIS [SERIES OF QUESTIONS WITH YOUR GROUP MEMBERS](https://github.com/joyapisi/Data-Analysis-Class/blob/main/INTRODUCTION.md)
+
 Title: Cleaning and Validating a Business Dataset
 
 Groups of 3–5 students · Practical project
