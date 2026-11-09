@@ -117,6 +117,81 @@ TXN_1013,2026-03-12,Home & Kitchen,Blender,2,35.00,North,PayPal
 TXN_1014,2026-03-15,Electronics,Wireless Headphones,3,89.99,South,Debit Card
 TXN_1015,2026-03-22,Clothing,T-Shirt,5,19.99,West,PayPal
 ```
+This guide provides a structured blueprint and formulas to clean a raw `.csv` transaction export and isolate seasonal sales variations within Microsoft Excel or Google Sheets.
+
+## Identified Data Integrity Issues
+* **Inconsistent Text Casing**: Mixed capitalization across fields (e.g., `ELECTRONICS` vs `electronics`).
+* **Hidden Trailing Spaces**: Excess padding in string entries (e.g., `" Blender "`).
+* **Missing Value Anomalies**: Blank entries in critical fields like `Unit_Price` (e.g., records `TXN_1004` and `TXN_1012`).
+
+---
+
+## Spreadsheet Blueprint & Formulas
+
+Add the following helper columns to your spreadsheet layout to transform the dirty source data into a standardized analytics layer.
+
+### a. Product Name Sanitization (Column I)
+Removes hidden leading and trailing white spaces that break matches.
+* **Formula (Cell I2):** 
+  ```excel
+  =TRIM(D2)
+  ```
+
+### b. Missing Unit Price Recovery (Column J)
+Employs a logical fallback test leveraging `product_mapping.csv` to replace empty price attributes automatically.
+* **Modern Excel Formula (Cell J2):**
+  ```excel
+  =IF(ISBLANK(F2), XLOOKUP(I2, product_mapping.csv!$A:$A, product_mapping.csv!$C:$C, 0), F2)
+  ```
+* **Legacy VLOOKUP Alternative (Cell J2):**
+  ```excel
+  =IF(OR(ISBLANK(F2), F2=""), IFERROR(VLOOKUP(I2, product_mapping.csv!$A:$C, 3, FALSE), 0), F2)
+  ```
+
+### c. Total Sales Calculation (Column K)
+Calculates gross line items cleanly.
+* **Formula (Cell K2):** 
+  ```excel
+  =E2 * J2
+  ```
+
+### d. Seasonal Variance Isolation (Column L)
+Uses a nested `IFS` conditional tree to segment dates into calendar seasons based on the ISO text sequence extraction.
+* **Formula (Cell L2):** 
+  ```excel
+  =IFS(
+    ISBLANK(B2), "Unknown",
+    OR(MONTH(B2)=12, MONTH(B2)<=2), "Winter Peak",
+    MONTH(B2)<=5, "Spring Shoulder",
+    MONTH(B2)<=8, "Summer Peak",
+    MONTH(B2)<=11, "Autumn Shoulder"
+  )
+  ```
+
+---
+
+## Reference Dataset Output Evaluation
+
+Once populated down all rows, the system evaluates your raw export into the following cleaned structured table matrix:
+
+| Transaction_ID | Date | Product_Category | Cleaned_Product (Col I) | Quantity | Cleaned_Price (Col J) | Total_Sales (Col K) | Season (Col L) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **TXN_1001** | 2026-01-15 | Electronics | Wireless Headphones | 2 | 89.99 | 179.98 | Winter Peak |
+| **TXN_1002** | 2026-01-16 | ELECTRONICS | USB-C Cable | 5 | 15.50 | 77.50 | Winter Peak |
+| **TXN_1003** | 2026-01-16 | Clothing | Winter Jacket | 1 | 120.00 | 120.00 | Winter Peak |
+| **TXN_1004** | 2026-01-17 | Home & Kitchen | Blender | 1 | **35.00** *(Looked up)* | 35.00 | Winter Peak |
+| **TXN_1005** | 2026-01-18 | Clothing | Running Shoes | 2 | 75.00 | 150.00 | Winter Peak |
+| **TXN_1006** | 2026-02-01 | Home & Kitchen | Coffee Maker | 1 | 45.00 | 45.00 | Winter Peak |
+| **TXN_1007** | 2026-02-02 | electronics | Wireless Headphones | 1 | 89.99 | 89.99 | Winter Peak |
+| **TXN_1008** | 2026-02-03 | Clothing | Winter Jacket | 2 | 120.00 | 240.00 | Winter Peak |
+| **TXN_1009** | 2026-02-14 | Home & Kitchen | Air Fryer | 1 | 110.00 | 110.00 | Winter Peak |
+| **TXN_1010** | 2026-02-15 | Electronics | USB-C Cable | 10 | 15.50 | 155.00 | Winter Peak |
+| **TXN_1011** | 2026-03-01 | CLOTHING | Running Shoes | 1 | 75.00 | 75.00 | Spring Shoulder |
+| **TXN_1012** | 2026-03-02 | Electronics | Smart Watch | 1 | **199.99** *(Looked up)* | 199.99 | Spring Shoulder |
+| **TXN_1013** | 2026-03-12 | Home & Kitchen | Blender | 2 | 35.00 | 70.00 | Spring Shoulder |
+| **TXN_1014** | 2026-03-15 | Electronics | Wireless Headphones | 3 | 89.99 | 269.97 | Spring Shoulder |
+| **TXN_1015** | 2026-03-22 | Clothing | T-Shirt | 5 | 19.99 | 99.95 | Spring Shoulder |
+
 ### 3. Product Analyst - GA4* 
 **Core Focus:** Tracking web traffic conversions, mapping user interactions, and identifying application friction points.* **Online Practical:** 
 **User Acquisition & Checkout Funnel Analysis**
