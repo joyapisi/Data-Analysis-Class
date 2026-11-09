@@ -120,7 +120,7 @@ TXN_1015,2026-03-22,Clothing,T-Shirt,5,19.99,West,PayPal
 ### 3. Product Analyst - GA4* 
 **Core Focus:** Tracking web traffic conversions, mapping user interactions, and identifying application friction points.* **Online Practical:** 
 **User Acquisition & Checkout Funnel Analysis**
-  * **Tools Needed:** Google Analytics 4 (GA4 Demo Account or Test Property).
+  * **Tools Needed:** Google Analytics 4 ([GA4 Demo Account](https://support.google.com/analytics/answer/6367342?hl=en#zippy=%2Cin-this-article) or Test Property).
   * **Objective:** Build a custom exploration funnel to audit where users drop off between viewing an item and finalizing a purchase.
   * **Deliverable:** A GA4 Exploration Funnel report detailing specific stage-to-stage drop-off rates and three data-backed UX recommendations.
 
