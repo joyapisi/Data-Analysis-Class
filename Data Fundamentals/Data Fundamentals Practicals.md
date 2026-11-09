@@ -120,6 +120,14 @@ TXN_1015,2026-03-22,Clothing,T-Shirt,5,19.99,West,PayPal
 This guide provides a structured blueprint and formulas to clean a raw `.csv` transaction export and isolate seasonal sales variations within Microsoft Excel or Google Sheets.
 
 ## Identified Data Integrity Issues
+
+Use te DIRTY framework:
+**D** - Duplicate records
+**I** - Inconnsistent formatting
+**R** - Rogue spaces
+**T** - Typos and casing
+**Y** - Yieldless Blanks
+
 * **Inconsistent Text Casing**: Mixed capitalization across fields (e.g., `ELECTRONICS` vs `electronics`).
 * **Hidden Trailing Spaces**: Excess padding in string entries (e.g., `" Blender "`).
 * **Missing Value Anomalies**: Blank entries in critical fields like `Unit_Price` (e.g., records `TXN_1004` and `TXN_1012`).
