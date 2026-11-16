@@ -93,7 +93,7 @@ ggplot(kenya_gdp_data, aes(x = year, y = gdp_growth)) +
   )
 
   ```
-## 2. Data Analyst - Excel
+## 2. Data Analyst - Excel*
 **Core Focus:** Cleaning transaction records, calculating baseline metrics, and summarizing operational trends.
   * **Online Practical:** **E-Commerce Sales Performance Analysis**
   * **Tools Needed:** Microsoft Excel or Google Sheets.
