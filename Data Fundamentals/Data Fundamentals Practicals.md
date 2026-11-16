@@ -5,8 +5,8 @@ This repository contains a structured, hands-on curriculum featuring data roles 
 ---## 📋 Curriculum Overview
 | # | Career Path | Project Focus | Core Tools |
 |---|:---|:---|:---|
-| 1 | [Data Analyst](#2-data-analyst---posit-cloud--r) | Macroeconomic GDP Visualization | Posit Cloud, R, ggplot2 |
-| 2 | [Data Analyst](#1-data-analyst---excel) | E-Commerce Sales Performance | Excel / Sheets |
+| 1 | [Data Analyst](#1-data-analyst---excel) | Macroeconomic GDP Visualization | Posit Cloud, R, ggplot2 |
+| 2 | [Data Analyst](#2-data-analyst---posit-cloud--r) | E-Commerce Sales Performance | Excel / Sheets |
 | 3 | [Product Analyst](#3-product-analyst---ga4) | User Acquisition & Checkout Funnel | Google Analytics 4 (GA4) |
 | 4 | [Product Analyst](#4-product-analyst---posit-cloud--shiny) | Multi-Step Dynamic Registration App | Posit Cloud, RShiny |
 | 5 | [Marketing Data Analyst](#5-marketing-data-analyst---metricool) | Cross-Channel Social ROI Performance | Metricool |
@@ -19,7 +19,7 @@ This repository contains a structured, hands-on curriculum featuring data roles 
 
 ## 🛠️ Career Modules & Practicals
 
-### 1. Data Analyst - Posit Cloud & R* 
+## 1. Data Analyst - Posit Cloud & R*
 **Core Focus:** Writing reproducible scripts to fetch, clean, and map global economic indicators.* 
 **Online Practical:** **Macroeconomic GDP Trend Visualization**
   * **Tools Needed:** Posit Cloud workspace, R (`tidyverse`, `WDI` or `ggplot2`).
@@ -93,7 +93,7 @@ ggplot(kenya_gdp_data, aes(x = year, y = gdp_growth)) +
   )
 
   ```
-### 2. Data Analyst - Excel
+## 2. Data Analyst - Excel
 **Core Focus:** Cleaning transaction records, calculating baseline metrics, and summarizing operational trends.
   * **Online Practical:** **E-Commerce Sales Performance Analysis**
   * **Tools Needed:** Microsoft Excel or Google Sheets.
@@ -121,7 +121,7 @@ This guide provides a structured blueprint and formulas to clean a raw `.csv` tr
 
 ## Identified Data Integrity Issues
 
-Use te DIRTY framework:
+Use the DIRTY framework:
 **D** - Duplicate records
 **I** - Inconnsistent formatting
 **R** - Rogue spaces
@@ -200,7 +200,7 @@ Once populated down all rows, the system evaluates your raw export into the foll
 | **TXN_1014** | 2026-03-15 | Electronics | Wireless Headphones | 3 | 89.99 | 269.97 | Spring Shoulder |
 | **TXN_1015** | 2026-03-22 | Clothing | T-Shirt | 5 | 19.99 | 99.95 | Spring Shoulder |
 
-### 3. Product Analyst - GA4* 
+## 3. Product Analyst - GA4* 
 **Core Focus:** Tracking web traffic conversions, mapping user interactions, and identifying application friction points.* **Online Practical:** 
 **User Acquisition & Checkout Funnel Analysis**
   * **Tools Needed:** Google Analytics 4 ([GA4 Demo Account](https://support.google.com/analytics/answer/6367342?hl=en#zippy=%2Cin-this-article) or Test Property).
@@ -209,27 +209,27 @@ Once populated down all rows, the system evaluates your raw export into the foll
 
   <img width="500" height="375" alt="image" src="https://github.com/user-attachments/assets/e5f58c48-861b-44ce-ba65-0d15ad03e4bc" />
  
-## 3. Implementation Steps for Practical 3 (Product Analyst - GA4)
+### Implementation Steps for Practical 3 (Product Analyst - GA4)
 This practical utilizes the official Google Analytics 4 (GA4) Merchandise Store Demonstration Account. Students do not need to configure code snippets or manage a live website deployment to complete this analysis.
-## Step 1: Access the Environment
+### Step 1: Access the Environment
 
    1. Open a web browser and navigate to the official [Google Analytics Help Center](https://support.google.com/analytics/answer/6366960).
    2. Scroll down to the Access the demo account section and click the link for the GA4 Google Merchandise Store web property.
    3. Log in with any standard Google account credentials.
 
-## Step 2: Open the Explorations Workspace
+### Step 2: Open the Explorations Workspace
 
    1. Locate the left-hand navigation sidebar inside the GA4 interface.
    2. Click on Explore (represented by a blank canvas icon with a trend graph) to bypass standard canned reporting layouts.
    3. Select Blank to spin up an unrestricted custom analytics exploration layout from scratch.
    4. Rename your configuration tab in the top-left section from Untitled Exploration to User Acquisition & Checkout Funnel Analysis.
 
-## Step 3: Configure the Funnel Parameters
+### Step 3: Configure the Funnel Parameters
 
    1. Look at the Variables column on the far left. Find Technique and change the drop-down menu setting from Free Form to Funnel Exploration.
    2. Scroll down to the Tab Settings column (the middle column) and locate the Steps configuration panel. Click the Pencil Icon to open the custom funnel step builder modal.
 
-## Step 4: Map Out the Four Funnel Stages
+### Step 4: Map Out the Four Funnel Stages
 Define the following sequential micro-conversions using standard GA4 event variables within the modal layout:
 
 * Step 1: User Ingestion (Session Start)
@@ -249,26 +249,26 @@ Define the following sequential micro-conversions using standard GA4 event varia
    * Event Definition: Select purchase.
 
 Click the blue Apply button in the top right corner of the step builder window.
-## Step 5: Isolate Growth Bottlenecks and Formulate Insights
+### Step 5: Isolate Growth Bottlenecks and Formulate Insights
 
    1. Analyze the automatically generated bar graph visual asset in the main canvas pane.
    2. Record the Abandonment Rate (the red down-arrow metric) calculated between Step 2 (Product Viewed) and Step 3 (Added to Cart). This usually indicates design flaws, confusing pricing displays, or weak call-to-action buttons.
    3. Drag the Session Source/Medium dimension from the Variables column down into the Breakdown box under Tab Settings to group the funnel rows by ad traffic channels. Identify which pipeline channel drops off most aggressively.
 
-## Step 6: Export Your Deliverable
+### Step 6: Export Your Deliverable
 
    1. Click the Export Data icon located in the upper right quadrant of the main canvas pane.
    2. Select Google Sheets or CSV to save the tabular row outputs.
    3. Compile these calculations into a clean Markdown document or executive memo summarizing three UI optimization ideas aimed directly at the highest drop-off stage.
 
-### 4. Product Analyst - Posit Cloud & Shiny* 
+## 4. Product Analyst - Posit Cloud & Shiny* 
 **Core Focus:** Building front-end web interfaces to capture user inputs and handle structured analytical workflows.* 
 **Online Practical:** **Multi-Step Dynamic Registration Form App**
   * **Tools Needed:** Posit Cloud, RShiny framework.
   * **Objective:** Develop a reactive 3-step sign-up interface that validates inputs (email, age, region) on the fly and simulates database submission status.
   * **Deliverable:** A live UI link and a source `app.R` script processing user form interactions reactively in the cloud.
 
-### 5. Marketing Data Analyst - Metricool* 
+## 5. Marketing Data Analyst - Metricool* 
 **Core Focus:** Managing organic engagement loops, evaluating community metrics, and benchmarking content efficacy.* 
 **Online Practical:** 
 **Cross-Channel Social ROI Performance Auditing**
@@ -276,7 +276,7 @@ Click the blue Apply button in the top right corner of the step builder window.
   * **Objective:** Aggregate impressions, click-through rates (CTR), and follower growth patterns from unified social channels over 90 days.
   * **Deliverable:** A client-ready marketing performance PDF generated directly from Metricool metrics, accompanied by a content strategy review.
 
-### 6. Marketing Data Analyst - SQL* 
+## 6. Marketing Data Analyst - SQL* 
 **Core Focus:** Joining distributed advertising metrics to calculate exact customer acquisition costs.* 
 **Online Practical:** 
 **Ad Spend & Conversion Attribution Tuning**
@@ -284,7 +284,7 @@ Click the blue Apply button in the top right corner of the step builder window.
   * **Objective:** Write advanced relational SQL queries (`JOIN`, `GROUP BY`, `CASE WHEN`) to reconcile ad platform costs against backend transactional conversions.
   * **Deliverable:** A raw SQL script that calculates Return on Ad Spend (ROAS) and Cost Per Acquisition (CPA) grouped by traffic source.
 
-### 7. Data Engineer - SQL* 
+## 7. Data Engineer - SQL* 
 **Core Focus:** Defining relational architectures, enforcing data constraints, and ensuring database indexing sanity.* 
 **Online Practical:** 
 **Financial Transaction Database Schema Modeling**
@@ -292,21 +292,21 @@ Click the blue Apply button in the top right corner of the step builder window.
   * **Objective:** Design and write DDL scripts to build tables for customers, accounts, and transactions with correct primary/foreign key relationships.
   * **Deliverable:** A validated `.sql` database creation script that includes indices for optimized transaction history retrieval.
 
-### 8. Data Engineer - Posit Cloud* 
+## 8. Data Engineer - Posit Cloud* 
 **Core Focus:** Building automated data collection intervals and scheduling hands-off analytical documents.* 
 **Online Practical:** **Automated Scheduled Report Pipeline**
-  * **Tools Needed:** Posit Cloud, RMarkdown or Quarto, Cron jobs/Posit Connect.
+  * **Tools Needed:** Posit Cloud, R Markdown or Quarto, Cron jobs/Posit Connect.
   * **Objective:** Write a script that checks a live web data source, structures new records, and updates a stylized analytical report document layout.
   * **Deliverable:** A reproducible Quarto template that executes on a schedule to render a refreshed, standalone summary report document.
 
-### 9. Business Analytics Translator - Excel* 
+## 9. Business Analytics Translator - Excel* 
 **Core Focus:** Bridging complex underlying data frameworks into clear operational forecasting models for business leads.* **Online Practical:** 
 **User Cohort Retention & Financial Run Rate Forecast**
   * **Tools Needed:** Microsoft Excel.
   * **Objective:** Translate raw cohort activity dates into a monthly subscription retention matrix and map future corporate cash flow projections.
   * **Deliverable:** A financial forecasting model complete with conditional formatting heatmaps and a 12-month forward-looking executive summary.
 
-### 10. Business Analytics Translator - Shiny* 
+## 10. Business Analytics Translator - Shiny* 
 **Core Focus:** Democratizing statistical calculation engines by creating easy-to-use, interactive tools for non-technical stakeholders.* 
 **Online Practical:** 
 **Executive Scenario Planning Simulator**
