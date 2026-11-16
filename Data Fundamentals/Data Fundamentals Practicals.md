@@ -268,6 +268,280 @@ Click the blue Apply button in the top right corner of the step builder window.
   * **Objective:** Develop a reactive 3-step sign-up interface that validates inputs (email, age, region) on the fly and simulates database submission status.
   * **Deliverable:** A live UI link and a source `app.R` script processing user form interactions reactively in the cloud.
 
+  #### Step 1
+  a. Open your project in Posit Cloud.
+b. In the Console pane at the bottom left, install the required packages by running
+   
+   ```
+install.packages(c("shiny", "bslib"))
+```
+#### Step 2
+Replace all default code in your app.R file with the following complete script:
+
+```
+library(shiny)
+library(bslib)
+
+ui <- page_fluid(
+  theme = bs_theme(version = 5, bootswatch = "flatly"),
+  
+  div(
+    style = "max-width: 500px; margin: 50px auto;",
+    card(
+      card_header(
+        h4("Account Registration", class = "mb-0"),
+        textOutput("step_indicator", inline = TRUE)
+      ),
+      card_body(
+        # Hidden tabset acts as a multi-step wizard container
+        tabsetPanel(
+          id = "wizard_steps",
+          type = "hidden",
+          
+          # --- STEP 1: EMAIL ---
+          tabPanel(
+            "step1",
+            h5("Step 1: Contact Information"),
+            textInput("email", "Email Address", placeholder = "name@example.com", width = "100%"),
+            uiOutput("email_feedback"),
+            div(
+              class = "d-flex justify-content-end mt-4",
+              actionButton("to_step2", "Next", class = "btn-primary", disabled = TRUE)
+            )
+          ),
+          
+          # --- STEP 2: AGE ---
+          tabPanel(
+            "step2",
+            h5("Step 2: Age Verification"),
+            numericInput("age", "Your Age", value = NA, min = 1, max = 120, width = "100%"),
+            uiOutput("age_feedback"),
+            div(
+              class = "d-flex justify-content-between mt-4",
+              actionButton("back_to_1", "Back", class = "btn-secondary"),
+              actionButton("to_step3", "Next", class = "btn-primary", disabled = TRUE)
+            )
+          ),
+          
+          # --- STEP 3: REGION & SUBMIT ---
+          tabPanel(
+            "step3",
+            h5("Step 3: Regional Preferences"),
+            selectInput(
+              "region", "Select Your Region",
+              choices = c("Choose a region..." = "", "North America", "Europe", "Asia-Pacific", "Africa", "Latin America"),
+              width = "100%"
+            ),
+            uiOutput("region_feedback"),
+            hr(),
+            uiOutput("summary_box"),
+            div(
+              class = "d-flex justify-content-between mt-4",
+              actionButton("back_to_2", "Back", class = "btn-secondary"),
+              actionButton("submit_btn", "Create Account", class = "btn-success", disabled = TRUE)
+            )
+          ),
+          
+          # --- STEP 4: SUBMISSION STATUS ---
+          tabPanel(
+            "step4",
+            uiOutput("submission_status_ui")
+          )
+        )
+      )
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  
+  # Track current step for the header badge
+  current_step <- reactiveVal(1)
+  
+  output$step_indicator <- renderText({
+    if (current_step() <= 3) {
+      paste("Step", current_step(), "of 3")
+    } else {
+      "Complete"
+    }
+  })
+  
+  # --- 1. ON-THE-FLY EMAIL VALIDATION ---
+  is_email_valid <- reactive({
+    req(input$email)
+    grepl("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$", trimws(input$email))
+  })
+  
+  output$email_feedback <- renderUI({
+    if (is.null(input$email) || trimws(input$email) == "") {
+      return(tags$small(class = "text-muted", "Enter a valid email address to continue."))
+    }
+    if (is_email_valid()) {
+      tags$small(class = "text-success fw-bold", "✓ Valid email format.")
+    } else {
+      tags$small(class = "text-danger", "✗ Please enter a valid email (e.g., user@domain.com).")
+    }
+  })
+  
+  observe({
+    valid <- isTRUE(tryCatch(is_email_valid(), error = function(e) FALSE))
+    updateActionButton(session, "to_step2", disabled = !valid)
+  })
+  
+  # --- 2. ON-THE-FLY AGE VALIDATION ---
+  is_age_valid <- reactive({
+    !is.na(input$age) && is.numeric(input$age) && input$age >= 18 && input$age <= 120
+  })
+  
+  output$age_feedback <- renderUI({
+    if (is.na(input$age)) {
+      return(tags$small(class = "text-muted", "You must be at least 18 years old."))
+    }
+    if (is_age_valid()) {
+      tags$small(class = "text-success fw-bold", "✓ Age verified.")
+    } else if (input$age < 18) {
+      tags$small(class = "text-danger", "✗ You must be 18 or older to register.")
+    } else {
+      tags$small(class = "text-danger", "✗ Please enter a realistic age (18–120).")
+    }
+  })
+  
+  observe({
+    updateActionButton(session, "to_step3", disabled = !is_age_valid())
+  })
+  
+  # --- 3. ON-THE-FLY REGION VALIDATION & SUMMARY ---
+  is_region_valid <- reactive({
+    !is.null(input$region) && input$region != ""
+  })
+  
+  output$region_feedback <- renderUI({
+    if (is_region_valid()) {
+      tags$small(class = "text-success fw-bold", paste("✓ Region selected:", input$region))
+    } else {
+      tags$small(class = "text-muted", "Please select your geographic region.")
+    }
+  })
+  
+  output$summary_box <- renderUI({
+    req(is_region_valid())
+    div(
+      class = "alert alert-light border",
+      tags$strong("Review Your Details:"),
+      tags$ul(
+        class = "mb-0 mt-1",
+        tags$li(paste("Email:", trimws(input$email))),
+        tags$li(paste("Age:", input$age)),
+        tags$li(paste("Region:", input$region))
+      )
+    )
+  })
+  
+  observe({
+    updateActionButton(session, "submit_btn", disabled = !is_region_valid())
+  })
+  
+  # --- WIZARD NAVIGATION ---
+  observeEvent(input$to_step2, {
+    updateTabsetPanel(session, "wizard_steps", selected = "step2")
+    current_step(2)
+  })
+  
+  observeEvent(input$back_to_1, {
+    updateTabsetPanel(session, "wizard_steps", selected = "step1")
+    current_step(1)
+  })
+  
+  observeEvent(input$to_step3, {
+    updateTabsetPanel(session, "wizard_steps", selected = "step3")
+    current_step(3)
+  })
+  
+  observeEvent(input$back_to_2, {
+    updateTabsetPanel(session, "wizard_steps", selected = "step2")
+    current_step(2)
+  })
+  
+  # --- 4. SIMULATED DATABASE SUBMISSION ---
+  db_status <- reactiveVal("idle")
+  
+  observeEvent(input$submit_btn, {
+    # Switch to status view and set state to saving
+    updateTabsetPanel(session, "wizard_steps", selected = "step4")
+    current_step(4)
+    db_status("saving")
+    
+    # Show native Shiny progress notification during simulated network delay
+    withProgress(message = "Connecting to database...", value = 0.3, {
+      Sys.sleep(0.8)
+      incProgress(0.4, detail = "Validating record uniqueness...")
+      Sys.sleep(0.8)
+      incProgress(0.3, detail = "Committing transaction...")
+      Sys.sleep(0.5)
+    })
+    
+    # Simulate a database rule: reject emails containing "taken"
+    if (grepl("taken", tolower(input$email))) {
+      db_status("error")
+    } else {
+      db_status("success")
+    }
+  })
+  
+  output$submission_status_ui <- renderUI({
+    status <- db_status()
+    
+    if (status == "saving") {
+      div(
+        class = "text-center py-4",
+        div(class = "spinner-border text-primary mb-3", role = "status"),
+        h5("Submitting to Database..."),
+        p(class = "text-muted", "Please wait while we write your record.")
+      )
+    } else if (status == "success") {
+      div(
+        class = "text-center py-3",
+        div(class = "alert alert-success", h5("✓ Registration Complete!"), "Your profile has been saved to the database."),
+        p(tags$strong("Transaction ID: "), paste0("USR-", sample(100000:999999, 1))),
+        actionButton("reset_wizard", "Register Another User", class = "btn-outline-primary mt-2")
+      )
+    } else if (status == "error") {
+      div(
+        class = "text-center py-3",
+        div(
+          class = "alert alert-danger",
+          h5("✗ Database Error: Duplicate Entry"),
+          "That email address is already registered in our system."
+        ),
+        actionButton("retry_step1", "Change Email Address", class = "btn-warning mt-2")
+      )
+    }
+  })
+  
+  # Reset or retry handlers
+  observeEvent(input$retry_step1, {
+    updateTabsetPanel(session, "wizard_steps", selected = "step1")
+    current_step(1)
+    db_status("idle")
+  })
+  
+  observeEvent(input$reset_wizard, {
+    updateTextInput(session, "email", value = "")
+    updateNumericInput(session, "age", value = NA)
+    updateSelectInput(session, "region", selected = "")
+    updateTabsetPanel(session, "wizard_steps", selected = "step1")
+    current_step(1)
+    db_status("idle")
+  })
+}
+
+shinyApp(ui, server)
+```
+#### Step 3
+a. Click the Run App button at the top right of the app.R editor pane.
+b. Test live validation: Type a partial email or an age under 18 to watch the status messages update immediately while keeping the Next button disabled.
+c. Test database failure handling: Enter an email containing the word taken (such as taken@example.com) to trigger the simulated duplicate-record error state.
+
 ## 5. Marketing Data Analyst - Metricool* 
 **Core Focus:** Managing organic engagement loops, evaluating community metrics, and benchmarking content efficacy.* 
 **Online Practical:** 
