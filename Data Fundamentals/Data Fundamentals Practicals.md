@@ -264,7 +264,7 @@ Click the blue Apply button in the top right corner of the step builder window.
 ## 4. Product Analyst - Posit Cloud & Shiny* 
 **Core Focus:** Building front-end web interfaces to capture user inputs and handle structured analytical workflows.* 
 **Online Practical:** **Multi-Step Dynamic Registration Form App**
-  * **Tools Needed:** Posit Cloud, RShiny framework.
+  * **Tools Needed:** Posit Cloud, R Shiny framework.
   * **Objective:** Develop a reactive 3-step sign-up interface that validates inputs (email, age, region) on the fly and simulates database submission status.
   * **Deliverable:** A live UI link and a source `app.R` script processing user form interactions reactively in the cloud.
 
@@ -550,13 +550,13 @@ c. Test database failure handling: Enter an email containing the word taken (suc
   * **Objective:** Aggregate impressions, click-through rates (CTR), and follower growth patterns from unified social channels over 90 days.
   * **Deliverable:** A client-ready marketing performance PDF generated directly from Metricool metrics, accompanied by a content strategy review.
 
-  # Cross-Channel Social ROI Performance Audit (Metricool)
+  ### Cross-Channel Social ROI Performance Audit (Metricool)
 
 A step-by-step execution guide for auditing 90-day organic social media performance, evaluating engagement loops, and delivering a client-ready PDF report with a strategic review.
 
 ---
 
-## 📋 Overview
+#### 📋 Overview
 
 - **Role:** Marketing Data Analyst
 - **Core Focus:** Organic engagement loops, community metrics, and content efficacy benchmarking
@@ -568,7 +568,7 @@ A step-by-step execution guide for auditing 90-day organic social media performa
 
 ---
 
-## 🛠️ Prerequisites
+#### 🛠️ Prerequisites
 
 Before starting the audit, ensure you have:
 - [ ] Access to a **Metricool account** (Free tier or Sandbox environment).
