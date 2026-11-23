@@ -550,6 +550,82 @@ c. Test database failure handling: Enter an email containing the word taken (suc
   * **Objective:** Aggregate impressions, click-through rates (CTR), and follower growth patterns from unified social channels over 90 days.
   * **Deliverable:** A client-ready marketing performance PDF generated directly from Metricool metrics, accompanied by a content strategy review.
 
+  # Cross-Channel Social ROI Performance Audit (Metricool)
+
+A step-by-step execution guide for auditing 90-day organic social media performance, evaluating engagement loops, and delivering a client-ready PDF report with a strategic review.
+
+---
+
+## 📋 Overview
+
+- **Role:** Marketing Data Analyst
+- **Core Focus:** Organic engagement loops, community metrics, and content efficacy benchmarking
+- **Tool:** Metricool Dashboard (Free or Sandbox tier)
+- **Timeframe:** Last 90 Days
+- **Final Deliverables:**
+  1. A client-ready **Marketing Performance PDF** exported from Metricool.
+  2. A **Content Strategy Review** (executive summary + actionable recommendations).
+
+---
+
+## 🛠️ Prerequisites
+
+Before starting the audit, ensure you have:
+- [ ] Access to a **Metricool account** (Free tier or Sandbox environment).
+- [ ] At least **2+ active social channels** connected (e.g., Instagram, LinkedIn, X/Twitter, Facebook, TikTok, or YouTube) with historical data, or access to Metricool's demo/sandbox data.
+- [ ] A document editor (Google Docs, Notion, or Word) to draft your Content Strategy Review.
+
+---
+
+### 🚀 Step-by-Step Execution Guide
+
+#### Phase 1: Environment Setup & Data Aggregation
+1. **Log into Metricool:** Open your dashboard and navigate to the **Analytics** tab in the top navigation bar.
+2. **Verify Connected Channels:** Check the left-hand sidebar to confirm all target social profiles are connected and syncing properly.
+3. **Set the 90-Day Date Range:**
+   - Click the date picker in the top-right corner.
+   - Select **Last 90 Days** (or manually set a 90-day window).
+   - Enable the **"Compare with previous period"** toggle to benchmark growth against the prior 90 days.
+
+### Phase 2: Metric Extraction & Auditing
+Review each connected channel individually and record the following core metrics:
+
+| Metric Category | Key Data Points to Capture | What to Look For |
+| :--- | :--- | :--- |
+| **Reach & Visibility** | Total Impressions, Reach, Profile Views | Upward/downward trends; spikes tied to viral posts or campaigns. |
+| **Traffic & Conversion** | Link Clicks, Click-Through Rate (CTR) | Which formats/CTAs actually drive off-platform traffic. |
+| **Community Growth** | Net Follower Growth, Followers Gained vs. Lost | Churn spikes (unfollows) vs. steady organic acquisition. |
+| **Engagement Loops** | Engagement Rate, Comments, Shares, Saves | High saves/shares indicate high content value and algorithmic boost. |
+
+#### Phase 3: Benchmarking Content Efficacy
+1. **Audit Top & Bottom Performers:**
+   - Go to the **List of Posts** table within each channel's analytics view.
+   - Sort posts by **Impressions**, **Engagement**, and **Clicks** (descending and ascending).
+   - Identify the **Top 3** and **Bottom 3** posts across your channels.
+2. **Pattern Recognition:**
+   - Note the **content format** (Reels/Short video, Carousels, Single Image, Text/Links).
+   - Note the **posting day/time** (check Metricool's *Best Time to Post* heatmap).
+   - Note the **topic/hook** used in top-performing posts.
+
+#### Phase 4: Generate the Metricool PDF Report
+1. Navigate to **Analytics > Reports** in the left-hand menu.
+2. Select the **90-Day timeframe** you audited.
+3. Choose the channels to include in the report.
+4. **Customize Sections:** Toggle on *Summary*, *Community Growth*, *Engagement*, and *Top Posts* (disable irrelevant sections to keep it clean).
+5. *(Optional)* Upload a custom brand/client logo for a polished look.
+6. Click **Download PDF** and verify that all charts and tables render cleanly without cut-offs.
+
+#### Phase 5: Write the Content Strategy Review
+Create a concise, 1–2 page executive document (or appendix to your PDF) using the structure below:
+
+1. **Executive Summary (3–4 sentences):** High-level overview of 90-day performance (e.g., *"Organic impressions rose 18% over 90 days, led by LinkedIn carousels, though overall CTR dipped 0.4%."*).
+2. **Cross-Channel Scorecard:** A quick summary table comparing Impressions, CTR, Engagement Rate, and Net Follower Growth across channels.
+3. **What Worked (Engagement Loops):** Highlight top content pillars and formats that drove shares, saves, and comments.
+4. **Gaps & Bottlenecks:** Point out underperforming channels, high follower churn periods, or weak CTAs hurting CTR.
+5. **Actionable 30-Day Recommendations (3–5 bullets):** Specific changes to make next (e.g., *"Shift 40% of static image posts to short-form video,"* *"A/B test link placement in captions to lift CTR"*).
+
+---
+
 ## 6. Marketing Data Analyst - SQL* 
 **Core Focus:** Joining distributed advertising metrics to calculate exact customer acquisition costs.* 
 **Online Practical:** 
