@@ -38,9 +38,9 @@ kenya-hospitality-exam/
 Build and run an interactive R Shiny form in `app.R` tailored to the Kenyan hospitality industry.
 
 * **UI Form Inputs (4 pts):**
-  * **Guest Profile:** Guest Name/ID, Country of Residence (`Kenya`, `USA`, `UK`, `Germany`, `Uganda`, `Other`), Age Group, and Travel Party (`Solo`, `Couple`, `Family`, `Business Group`).
-  * **Stay Details:** Kenyan Location (`Nairobi`, `Mombasa/Diani`, `Naivasha`, `Maasai Mara`), Length of Stay (nights), Nightly Budget (KES), and Booking Channel (`Airbnb`, `Booking.com`, `Direct`, `Walk-in`).
-  * **Hospitality Preferences:** Primary Purpose (`Leisure/Safari`, `Business/Conference`, `Staycation`, `Visiting Family`), Top Desired Amenity (`High-Speed Wi-Fi`, `Airport Transfer`, `Swahili/Local Cuisine`, `Swimming Pool`, `Co-working Space`), and Overall Rating (`1–5`).
+  * **Guest Profile:** Guest Name, Guest ID, Country of Residence (`Kenya`, `USA`, `UK`, `Germany`, `Uganda`, `Other`), and Travel Party (`Solo`, `Couple`, `Family`, `Business Group`).
+  * **Stay Details:** Length of Stay (nights).
+  * **Hospitality Preferences:** Primary Purpose (`Leisure/Safari`, `Business/Conference`, `Staycation`, `Visiting Family`), Top Desired Amenity (`High-Speed Wi-Fi`, `Airport Transfer`, `Swahili/Local Cuisine`, `Swimming Pool`, `Co-working Space`).
 * **Server Validation & Live Preview (4 pts):**
   * Validate inputs on **Submit** (prevent blank guest names or `nights <= 0`).
   * Show a confirmation notification and render an updated table of recent submissions using `DT::datatable()`.
