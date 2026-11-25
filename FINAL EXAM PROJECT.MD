@@ -131,9 +131,9 @@ The form must collect the following six variables:
 
 For most_preferred_amenity, provide these choices:
 
-- WiFi
-- Swimming Pool
-- Balcony / Verandah
+- cultural experiences
+- wildlife packages
+- airport transfers
 
 Allow guests to select more than one amenity.
 
@@ -141,7 +141,7 @@ If multiple amenities are selected, combine them into a single comma-separated s
 
 Example:
 
-wifi, pool
+wildlife packages, airport transfers
 
 ### 4.1 Input Validation
 
@@ -237,29 +237,27 @@ After entering at least 20 records, download raw_guest_entries.csv.
 
 ### 4.5 Data Fundamentals
 
-In your README.md, explain the measurement/data type of each collected variable.
+In your README.md, explain the measurement/data type of each collected variable. Refer to Data Fundamentals Week 1&2 Notes for this.
 
 | Variable | Data Type | Explanation |
 |---|---|---|
-| id | Nominal | Identifies a booking; the identifier has no numerical meaning. |
-| name | Nominal | Identifies a guest. |
-| country | Nominal | Identifies the country of residence. |
-| citizenship | Nominal | Identifies nationality. |
-| length_of_stay | Discrete | Counts the number of nights. |
-| most_preferred_amenity | Nominal | Identifies selected amenities. |
+| id | Enter Data Type here | Give Your Explanation Here |
+| name | Enter Data Type here | Give Your Explanation Here |
+| country | Enter Data Type here | Give Your Explanation Here |
+| citizenship | Enter Data Type here | Give Your Explanation Here |
+| length_of_stay | Enter Data Type here | Give Your Explanation Here |
+| most_preferred_amenity | Enter Data Type here | Give Your Explanation Here |
 
-Also explain:
+e.g:
 
-- Nominal data: Categories without a natural order.
-- Ordinal data: Categories with a meaningful order.
+- Numeric/Nominal data: Categories without a natural order.
 - Discrete data: Countable numerical values.
-- Continuous data: Numerical values measurable along a continuous scale.
 
-Identify which of the four data types are represented in your dataset and which are not.
+Identify which of these data types are represented in your dataset and which are not. Refer to Data Fundamentals Week 1&2 Notes for this.
 
 ### 4.6 Hospitality Business Application
 
-Write a short explanation of how a Kenyan hotel can use country of residence, citizenship and length of stay together.
+Write a short explanation of how a Kenyan hotel can use country of residence, citizenship, and length of stay together.
 
 Consider the following examples:
 
