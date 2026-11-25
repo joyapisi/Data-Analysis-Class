@@ -52,11 +52,10 @@ Clean and standardize the data by:
 - Standardizing country names.
 - Removing duplicate records.
 - Checking and handling missing values.
-- Formatting numerical variables consistently.
 
-Create a Cleaning Log documenting the changes made.
+**[OPTIONAL]** Create a Cleaning Log documenting the changes made.
 
-Finally, create a Pivot Table summarizing visitor patterns by country of residence and citizenship.
+**[OPTIONAL]** Finally, create a Pivot Table summarizing visitor patterns by country of residence and citizenship.
 
 ### Part C: Database & SQL Analysis – SQLite (10 Points)
 
@@ -221,7 +220,7 @@ Country variations:
 - UK
 - United Kingdom
 
-Name variations:
+**[OPTIONAL]** Name variations:
 - Jason Onyango
 - jason ONYANGOO
 -  Jason Onyango
@@ -261,7 +260,7 @@ Write a short explanation of how a Kenyan hotel can use country of residence, ci
 
 Consider the following examples:
 
-- International tourists may be interested in cultural experiences, wildlife packages and airport transfers.
+- International tourists may be interested in cultural experiences, wildlife packages, and airport transfers.
 - Kenyan residents may respond to local weekend getaway packages.
 - Kenyan citizens living abroad may be interested in diaspora family packages.
 - Guests staying five or more nights may be targeted with extended-stay discounts.
@@ -289,17 +288,17 @@ Create the following worksheets:
 
 1. Raw Data
 2. Cleaned Data
-3. Cleaning Log
-4. Hospitality Summary
+3. **[OPTIONAL]** Cleaning Log
+4. **[OPTIONAL]** Hospitality Summary
 
 Keep the original imported data in the Raw Data worksheet.
 
-Perform all cleaning operations in the Cleaned Data worksheet.
-
 ## 5.1 Text and Formatting Standardization (3 Points)
 
-Clean the following text fields:
+Clean ONLY the COUNTRY text fields:
+- country
 
+**[OPTIONAL]** Clean all the fields:
 - id
 - name
 - country
@@ -337,21 +336,17 @@ Format length_of_stay as a whole number with zero decimal places.
 
 Use Excel:
 
-Data → Remove Duplicates
-
-Select:
-- id
-- name
+Data → Remove Duplicates in the country column
 
 Remove repeated submissions.
 
-Check for blank cells across all variables.
+**[OPTIONAL]** Check for blank cells across all variables.
 
 Where appropriate:
 - Replace missing text fields with "Not Specified".
-- If length_of_stay contains missing numerical values, calculate the median of available values and use it to fill the missing entries.
+- **[OPTIONAL]** If length_of_stay contains missing numerical values, calculate the median of available values and use it to fill the missing entries.
 
-Document the following in your Cleaning Log:
+**[OPTIONAL]** Document the following in your Cleaning Log:
 
 1. Total rows exported from Part A.
 2. Number of duplicate rows removed.
@@ -381,7 +376,7 @@ Rename the values to:
 - Total Guests
 - Average Length of Stay (Nights)
 
-The Pivot Table should help a hotel understand where visitors reside, their citizenship and how long they typically stay.
+The Pivot Table should help a hotel understand where visitors reside, their citizenship, and how long they typically stay.
 
 ---
 
