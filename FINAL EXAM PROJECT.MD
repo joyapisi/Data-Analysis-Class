@@ -360,7 +360,7 @@ Document the following in your Cleaning Log:
 5. Text standardization rules applied.
 6. Any additional corrections made.
 
-## 5.3 Hospitality Summary Pivot Table (2 Points)
+## 5.3 (OPTIONAL) Hospitality Summary Pivot Table (2 Points)
 
 Create a Pivot Table using the Cleaned Data worksheet.
 
